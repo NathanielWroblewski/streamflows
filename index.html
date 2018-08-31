@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>N.C. Streamflow</title>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Current Streamflow</h1>
+      <p class="subtitle">across North Carolina</p>
+      <section>
+        <noscript>
+          <p class="text">This site relies on javascript for proper operation.  Please consider enabling javascript for the full experience.
+          </p>
+        </noscript>
+        <p class="text">
+          This site provides paddlers with accurate gauge readings of streams in North Carolina.  Data is provided by the <a href="//www.usgs.gov/">USGS</a>.
+        </p>
+        <figure class="map">
+          <figcaption class="figure-title">
+            Fig. 1: Interactive map of USGS streamflow data
+          </figcaption>
+          <svg
+            width="600"
+            height="228"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g class="basins"></g>
+            <g class="rivers"></g>
+            <g class="points"></g>
+          </svg>
+          <div class="loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="tooltip"></div>
+          <p class="instructions">
+            Drag to move.  Scroll to zoom.  Hover for data.  Click for livestream.
+          </p>
+          <div class="legend">
+            <div class="basin-key"></div>
+            <span class="key">Basin</span>
+            <div class="river-key"></div>
+            <span class="key">River</span>
+            <div class="measurement-key"></div>
+            <span class="key">Measurement</span>
+            <div class="livestream-key"></div>
+            <span class="key">Measurement with livestream</span>
+          </div>
+        </figure>
+        <figure>
+          <figcaption class="figure-title">
+            Fig. 2: USGS Statewide streamflow tabular data
+          </figcaption>
+          <div class="tabular-data"></div>
+        </figure>
+        <p class="text">
+          Paddlers consider the amount of water in a stream by both <dfn>height</dfn> and <dfn>flow</dfn>:
+        </p>
+        <ul>
+          <li>
+            <p class="text">
+              <dfn>Height</dfn> is a measure of the water surface above some reference point.  Here, water height is expressed in units of feet (ft), and the gauge will have its zero-point below the riverbed, preventing negative height readings.
+            </p>
+          </li>
+          <li>
+            <p class="text">
+              <dfn>Flow</dfn> is a measure of the volume of water moving downstream each second.  Here, water flow is expressed in units of cubic feet per second (cfs).  Flow is not usually measured directly at gauging stations.  Tables are used to correlate height to flow readings.  The tables are developed by measuring the speed of water at many points across a stream and at different depths.  The result is an estimate of flow for a given height.  Still, for paddlers, there are advantages to using flow readings rather than height readings.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+  <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+  <script type="text/javascript" src="//d3js.org/topojson.v1.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/namespace.js"></script>
+  <script type="text/javascript" src="/public/javascripts/models/dataset.js"></script>
+  <script type="text/javascript" src="/public/javascripts/models/datum.js"></script>
+  <script type="text/javascript" src="/public/javascripts/views/projection.js"></script>
+  <script type="text/javascript" src="/public/javascripts/views/basins.js"></script>
+  <script type="text/javascript" src="/public/javascripts/views/rivers.js"></script>
+  <script type="text/javascript" src="/public/javascripts/views/measurements.js"></script>
+  <script type="text/javascript" src="/public/javascripts/views/tooltip.js"></script>
+  <script type="text/javascript" src="/public/javascripts/views/error_message.js"></script>
+  <script type="text/javascript" src="/public/javascripts/views/table.js"></script>
+  <script type="text/javascript" src="/public/javascripts/main.js"></script>
+</html>
