@@ -19,11 +19,11 @@ class Measurements extends App.Views.Projection {
 
   }
 
-  _xcenter = ({ position }) => {
+  _xcenter ({ position }) {
     return this._projection(position)[0]
   }
 
-  _ycenter = ({ position }) => {
+  _ycenter ({ position }) {
     return this._projection(position)[1]
   }
 
@@ -44,8 +44,8 @@ class Measurements extends App.Views.Projection {
       .data(dataset)
       .enter()
       .append('circle')
-      .attr('cx', this._xcenter)
-      .attr('cy', this._ycenter)
+      .attr('cx', d => this._xcenter(d))
+      .attr('cy', d => this._ycenter(d))
       .attr('r', this._radius)
       .attr('class', this._class)
       .on('click', d => this._handleClick(d))
