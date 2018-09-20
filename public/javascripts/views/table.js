@@ -50,24 +50,24 @@ const COMPARATORS = {
     })
   ),
   height: (a, b) => {
-    const _a = a.height.value || 0
-    const _b = b.height.value || 0
+    const _a = parseFloat(a.height.value) || 0
+    const _b = parseFloat(b.height.value) || 0
 
     if (_a === _b) return 0
 
     return _a > _b ? 1 : -1
   },
   flow: (a, b) => {
-    const _a = a.flow.value || 0
-    const _b = b.flow.value || 0
+    const _a = parseFloat(a.flow.value) || 0
+    const _b = parseFloat(b.flow.value) || 0
 
     if (_a === _b) return 0
 
     return _a > _b ? 1 : -1
   },
   temp: (a, b) => {
-    const _a = a.temp.value || 0
-    const _b = b.temp.value || 0
+    const _a = parseFloat(a.temp.value) || 0
+    const _b = parseFloat(b.temp.value) || 0
 
     if (_a === _b) return 0
 
