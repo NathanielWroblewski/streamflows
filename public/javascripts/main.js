@@ -1,6 +1,6 @@
 !function () {
-  const BASINS = '/public/javascripts/datasets/simplified_major_river_basins.topojson'
-  const RIVERS = '/public/javascripts/datasets/simplified_rivers.topojson'
+  const BASINS = '/streamflows/public/javascripts/datasets/simplified_major_river_basins.topojson'
+  const RIVERS = '/streamflows/public/javascripts/datasets/simplified_rivers.topojson'
   const USGS_API_URL = 'https://waterservices.usgs.gov/nwis/iv/?format=json&stateCd=nc&parameterCd=00060,00065,00010&siteType=ES,LK,ST&siteStatus=active'
   const element = document.querySelector('.map > svg')
   const TOTAL_CALLS = 3
